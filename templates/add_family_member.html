@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Add Family Member</h1>
+    <form action="{{ url_for('add_family_member') }}" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="text" name="relationship" placeholder="Relationship" required><br>
+        <input type="number" name="parent_id" placeholder="Parent ID (optional)"><br>
+        <input type="file" name="photo"><br>
+        <button type="submit">Add</button>
+    </form>
+{% endblock %}

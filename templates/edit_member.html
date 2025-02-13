@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Edit Family Member</h1>
+    <form action="{{ url_for('edit_family_member', member_id=member[0]) }}" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" value="{{ member[1] }}" required><br>
+        <input type="text" name="relationship" value="{{ member[2] }}" required><br>
+        <input type="number" name="parent_id" value="{{ member[3] }}" placeholder="Parent ID"><br>
+        <input type="file" name="photo"><br>
+        <button type="submit">Save Changes</button>
+    </form>
+{% endblock %}
